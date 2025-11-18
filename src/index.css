@@ -78,3 +78,68 @@ hr {
   padding-inline: 2px;
   background-color: #eee;
 }
+
+.start-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f6f6; /* light neutral */
+  padding: 16px;
+}
+
+.start-card {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.start-card h1 {
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.start-card p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.start-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.start-form input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  outline: none;
+}
+
+.start-form input:focus {
+  border-color: #8a63d2;
+}
+
+.start-form button {
+  padding: 10px 14px;
+  font-size: 14px;
+  background: #8a63d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.start-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

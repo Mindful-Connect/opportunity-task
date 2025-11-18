@@ -1,8 +1,8 @@
 # Front-End Take-Home Challenge: Opportunity Tracker
 
-Welcome! We're excited to see your work. This challenge simulates a typical task you might encounter on our team: building a new feature for one of our internal tools.
+Welcome! We're excited to see your work. This challenge simulates a typical task you might encounter on our team: building a new feature that requires connecting a user interface to a live backend API.
 
-Your goal is to implement a simple single-page application that acts as an **Opportunity Tracker**. You will be building the front-end to create, view, and manage business opportunities using a live backend API.
+Your goal is to implement a simple single-page application that acts as an **Opportunity Tracker**. You will be responsible for both building the front-end components and handling communication with the backend.
 
 The starter project, design files, and API documentation are detailed below. Good luck!
 
@@ -15,7 +15,7 @@ Your goal is to implement a simple single-page application (SPA) to create, view
 1.  A form to create new opportunities.
 2.  A page to list, search, and delete existing opportunities.
 
-This starter project is a Vite + React + TypeScript application. You will be working with a live backend API that requires session-based authentication.
+This starter project is a Vite + React + TypeScript application.
 
 ---
 
@@ -39,7 +39,7 @@ npm install
 ```
 
 **2. Configure Your Environment**
-This project requires an API URL to function.
+This project requires a connection to our live API.
 
 - Create a new file in the root of this project named `.env`.
 - Copy and paste the following content into it:
@@ -120,8 +120,6 @@ Your application will communicate with our live backend. The base URL is configu
 **Authentication:** All endpoints listed below are protected. The provided API client in this template is already configured to automatically read your session token from Local Storage and send it in the `Authorization: Bearer <token>` header on every request.
 
 ---
-
-## Submission Instructions
 
 ## Submission Instructions
 

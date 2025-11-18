@@ -1,28 +1,23 @@
-import { Outlet } from 'react-router'
-import { NavLink } from 'react-router'
-import happlyLogo from '/happly_logo.svg'
+import { useSession } from "./context/SessionContext";
+import { Outlet } from "react-router";
+import StartPage from "./pages/StartPage";
 
 function App() {
+  const { session, isLoading } = useSession();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!session) {
+    return <StartPage />;
+  }
+
   return (
-    <>
-      <div className='navbar'>
-        <img src={happlyLogo} className='logo' alt='Vite logo' />
-
-        <div>
-          <p>Happly Front End Task</p>
-          <div className='navlinks'>
-            <NavLink to='/'>🏠</NavLink>
-            <NavLink to='/form'>Form</NavLink>
-            <NavLink to='/list'>List</NavLink>
-          </div>
-        </div>
-      </div>
-
-      <div className='content'>
-        <Outlet />
-      </div>
-    </>
-  )
+    <div className="App">
+      <Outlet />
+    </div>
+  );
 }
 
-export default App
+export default App;
