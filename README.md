@@ -1,73 +1,140 @@
-# React + TypeScript + Vite
+# Front-End Take-Home Challenge: Opportunity Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome! We're excited to see your work. This challenge simulates a typical task you might encounter on our team: building a new feature for one of our internal tools.
 
-Currently, two official plugins are available:
+Your goal is to implement a simple single-page application that acts as an **Opportunity Tracker**. You will be building the front-end to create, view, and manage business opportunities using a live backend API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The starter project, design files, and API documentation are detailed below. Good luck!
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## The Task
 
-## Expanding the ESLint configuration
+Your goal is to implement a simple single-page application (SPA) to create, view, and manage business opportunities. The application will have two main pages:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  A form to create new opportunities.
+2.  A page to list, search, and delete existing opportunities.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This starter project is a Vite + React + TypeScript application. You will be working with a live backend API that requires session-based authentication.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Design Files
+
+A design mockup for this challenge can be found at the following link. Please aim to create an implementation that closely matches the provided designs for both desktop and mobile layouts.
+
+- **[Link to your Figma, Zeplin, or image file here]**
+
+---
+
+## Getting Started
+
+Follow these steps to get the project running and connected to the API.
+
+**1. Install Dependencies**
+Open your terminal, navigate to the project root, and run:
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**2. Configure Your Environment**
+This project requires an API URL to function.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Create a new file in the root of this project named `.env`.
+- Copy and paste the following content into it:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  ```
+  VITE_API_URL=https://your-live-api-url.com/api
+  ```
+
+  _(Note: Replace `https://your-live-api-url.com/api` with the actual API URL.)_
+
+**3. Start the Application**
+Run the following command to start the local development server:
+
+```bash
+npm start
 ```
+
+Your browser will open to `http://localhost:3000`. You will see a "Start Page" asking for your email.
+
+**4. Authenticate Your Session**
+Enter your email and click "Start Session." This will communicate with our backend to create a unique, temporary session for you. The session token will be automatically saved in your browser's Local Storage and used for all subsequent API calls. Once authenticated, you will be taken to the application's home page.
+
+---
+
+## Constraints & Guidelines
+
+Please adhere to the following constraints while completing the challenge:
+
+- **Technology:** This project must be completed using **TypeScript**, **functional components**, and **React Hooks**. Please do not use class components.
+- **Libraries:** You are free to use any libraries you see fit.
+- **Styling:** You have complete freedom in your styling approach. You can use plain CSS, CSS Modules, Tailwind CSS, or any CSS-in-JS library you prefer.
+
+---
+
+## Requirements
+
+Please implement the following features.
+
+### Functional Requirements
+
+- [ ] **Create Opportunities:**
+
+  - There should be a form page (e.g., at a `/form` route).
+  - The form must contain fields for `Title`, `Description`, and `Amount`.
+  - All form fields are required.
+  - Implement the following front-end validation:
+    - `Title`: Maximum 100 characters.
+    - `Description`: Maximum 500 characters.
+    - `Amount`: Must be a number with a maximum value of 10,000,000.
+  - Display a helpful error message to the user if validation fails.
+  - On successful submission, the form should clear, and the user should be redirected to the opportunity list page.
+
+- [ ] **List Opportunities:**
+
+  - There should be a page that displays all the opportunities you have created (e.g., at a `/list` route).
+  - This page must include a search bar that filters the list of opportunities by `Title` as the user types. The filtering should happen via an API call.
+
+- [ ] **Delete Opportunities:**
+  - Each opportunity in the list should have a "Delete" button.
+  - Clicking "Delete" should remove the item from the backend and update the list in the UI.
+
+### UI/UX Requirements
+
+- [ ] **Responsive Layout:**
+
+  - The listing page should have a responsive design that looks good on both mobile and desktop screens, as shown in the design files.
+
+- [ ] **Text Truncation:**
+  - In the opportunity list, if a `Title` is too long to fit in its container, it must be truncated with an ellipsis (...).
+  - If a `Description` is too long, it must be truncated to a maximum of two lines with an ellipsis (...).
+
+---
+
+## API Documentation
+
+Your application will communicate with our live backend. The base URL is configured in your `.env` file.
+
+**Authentication:** All endpoints listed below are protected. The provided API client in this template is already configured to automatically read your session token from Local Storage and send it in the `Authorization: Bearer <token>` header on every request.
+
+---
+
+## Submission Instructions
+
+1.  When you have completed the challenge, create a **new public repository** on your personal GitHub account.
+2.  Push all your code (including your git history) to this new repository.
+3.  Return to the application running on `localhost:3000`. There will be a section for you to submit your final work.
+4.  Paste the URL of your public GitHub repository into the submission form and click "Submit."
+
+---
+
+## What We're Looking For
+
+- **Correctness:** Does the application meet all the functional requirements and work as expected?
+- **Design Implementation:** How closely does your implementation match the provided design files for responsiveness, layout, and visual details?
+- **Code Quality:** Is the code clean, well-organized, and easy to read? Do you use modern React practices and TypeScript effectively?
+- **State Management:** How do you handle application state? Is it logical and efficient?
+
+We look forward to seeing your solution!
