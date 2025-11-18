@@ -123,10 +123,16 @@ Your application will communicate with our live backend. The base URL is configu
 
 ## Submission Instructions
 
-1.  When you have completed the challenge, create a **new public repository** on your personal GitHub account.
-2.  Push all your code (including your git history) to this new repository.
-3.  Return to the application running on `localhost:3000`. There will be a section for you to submit your final work.
-4.  Paste the URL of your public GitHub repository into the submission form and click "Submit."
+## Submission Instructions
+
+1.  When you have completed the challenge, create a **new private repository** on your personal GitHub account.
+2.  Push all your code (including your git history) to this new private repository.
+3.  Invite the following GitHub user(s) as collaborators to your private repository so we can review your work. This is a critical step.
+    - `inflex13`
+    - `yevgeniy-akimenko`
+    - `Nuccino92`
+4.  Return to the application running on `localhost:3000`. There will be a section for you to submit your final work.
+5.  Paste the URL of your **private** GitHub repository into the submission form and click "Submit."
 
 ---
 
