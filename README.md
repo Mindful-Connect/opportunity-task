@@ -115,9 +115,31 @@ Please implement the following features.
 
 ## API Documentation
 
-Your application will communicate with our live backend. The base URL is configured in your `.env` file.
+Your application will communicate with our live backend.  
+The base URL is configured in your `.env` file.
 
-**Authentication:** All endpoints listed below are protected. The provided API client in this template is already configured to automatically read your session token from Local Storage and send it in the `Authorization: Bearer <token>` header on every request.
+## API Documentation
+
+Your application will communicate with our live backend.  
+The base URL is configured in your `.env` file.
+
+**Authentication:**  
+All endpoints listed below are protected. You must retrieve the session token using the `useSession` hook inside the `SessionContext`.
+
+You are responsible for attaching this token to every request you make.  
+All authenticated requests must include the following header:
+
+For example:
+
+```ts
+fetch(`${API_URL}/example-endpoint`, {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`, // token from useSession()
+  },
+});
+```
 
 ---
 

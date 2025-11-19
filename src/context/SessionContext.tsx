@@ -13,6 +13,7 @@ interface SessionContextType {
   login: (email: string, testSlug: string) => Promise<void>;
   submit: (submissionUrl: string) => Promise<void>;
   isLoading: boolean;
+  token?: string;
 }
 
 const LOCAL_STORAGE_KEY = "happly-opportunity-session";
@@ -55,7 +56,13 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedSession));
   };
 
-  const value = { session, login, submit, isLoading };
+  const value = {
+    session,
+    login,
+    submit,
+    isLoading,
+    token: session?.session_token,
+  };
 
   return (
     <SessionContext.Provider value={value}>{children}</SessionContext.Provider>
