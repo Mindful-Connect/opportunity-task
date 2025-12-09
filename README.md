@@ -45,10 +45,8 @@ This project requires a connection to our live API.
 - Copy and paste the following content into it:
 
   ```
-  VITE_API_URL=https://your-live-api-url.com/api
+  VITE_API_URL=https://frontend-test-api-izjuflxj4q-nn.a.run.app
   ```
-
-  _(Note: Replace `https://your-live-api-url.com/api` with the actual API URL.)_
 
 **3. Start the Application**
 Run the following command to start the local development server:
