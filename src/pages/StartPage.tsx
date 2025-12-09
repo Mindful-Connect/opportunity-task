@@ -4,9 +4,7 @@ import { useSession } from "../context/SessionContext";
 const StartPage = () => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { session, login } = useSession();
-
-  console.log(session);
+  const { login } = useSession();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
