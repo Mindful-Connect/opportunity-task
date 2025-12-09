@@ -1,17 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router"; // Ensure this is 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router";
 
 import "./index.css";
 import App from "./App.tsx";
 import Home from "./pages/Home.tsx";
 import ToDoForm from "./pages/ToDoForm.tsx";
 import ToDoList from "./pages/ToDoList.tsx";
-import { SessionProvider } from "./context/SessionContext"; // 1. Import the provider
+import { SessionProvider } from "./context/SessionContext";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    {/* 2. Place SessionProvider outside of BrowserRouter */}
     <SessionProvider>
       <BrowserRouter>
         <Routes>

@@ -38,17 +38,7 @@ Open your terminal, navigate to the project root, and run:
 npm install
 ```
 
-**2. Configure Your Environment**
-This project requires a connection to our live API.
-
-- Create a new file in the root of this project named `.env`.
-- Copy and paste the following content into it:
-
-  ```
-  VITE_API_URL=https://frontend-test-api-izjuflxj4q-nn.a.run.app
-  ```
-
-**3. Start the Application**
+**2. Start the Application**
 Run the following command to start the local development server:
 
 ```bash
@@ -57,7 +47,7 @@ npm start
 
 Your browser will open to `http://localhost:3000`. You will see a "Start Page" asking for your email.
 
-**4. Authenticate Your Session**
+**3. Authenticate Your Session**
 Enter your email and click "Start Session." This will communicate with our backend to create a unique, temporary session for you. The session token will be automatically saved in your browser's Local Storage and used for all subsequent API calls. Once authenticated, you will be taken to the application's home page.
 
 ---
