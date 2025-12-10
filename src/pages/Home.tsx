@@ -51,6 +51,29 @@ export default function Home() {
         requirements to implement the app.
       </p>
 
+      <h2>API Documentation</h2>
+
+      <p>
+        Your application will communicate with our live backend. The base URL is
+        configured in your <span className='code'>.env</span> file. Here are the
+        API endpoints that you will need to use in the app:
+      </p>
+
+      <ul>
+        <li>
+          <span className='code'>GET /opportunities</span> - Get all
+          opportunities
+        </li>
+        <li>
+          <span className='code'>POST /opportunities</span> - Create a new
+          opportunity
+        </li>
+        <li>
+          <span className='code'>DELETE /opportunities/:id</span> - Delete an
+          opportunity
+        </li>
+      </ul>
+
       <h2>What We're Looking For</h2>
 
       <ul>

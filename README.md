@@ -103,16 +103,16 @@ Please implement the following features.
 
 ## API Documentation
 
-Your application will communicate with our live backend.  
+Your application will communicate with our live backend.
 The base URL is configured in your `.env` file.
+Here are the API endpoints that you will need to use in the app:
 
-## API Documentation
-
-Your application will communicate with our live backend.  
-The base URL is configured in your `.env` file.
+- `GET /opportunities` - Get all opportunities
+- `POST /opportunities` - Create a new opportunity
+- `DELETE /opportunities/:id` - Delete an opportunity
 
 **Authentication:**  
-All endpoints listed below are protected. You must retrieve the session token using the `useSession` hook inside the `SessionContext`.
+All endpoints are protected. You must retrieve the session token using the `useSession` hook inside the `SessionContext`.
 
 You are responsible for attaching this token to every request you make.  
 All authenticated requests must include the following header:
