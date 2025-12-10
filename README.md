@@ -139,7 +139,7 @@ fetch(`${API_URL}/example-endpoint`, {
     - `inflex13`
     - `yevgeniy-akimenko`
     - `Nuccino92`
-4.  Return to the application running on `localhost:3000`. There will be a section for you to submit your final work.
+4.  Return to the application running on `localhost:5173`. There will be a section for you to submit your final work.
 5.  Paste the URL of your **private** GitHub repository into the submission form and click "Submit."
 
 ---
