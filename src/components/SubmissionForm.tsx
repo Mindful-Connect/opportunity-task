@@ -29,7 +29,12 @@ const SubmissionForm = () => {
 
   return (
     <div
-      style={{ marginTop: '20px', padding: '20px', border: '1px solid #ccc' }}
+      style={{
+        marginTop: '20px',
+        marginBottom: '80px',
+        padding: '20px',
+        border: '1px solid #ccc',
+      }}
     >
       <h2>Final Submission</h2>
 

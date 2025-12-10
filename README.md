@@ -23,7 +23,8 @@ This starter project is a Vite + React + TypeScript application.
 
 A design mockup for this challenge can be found at the following link. Please aim to create an implementation that closely matches the provided designs for both desktop and mobile layouts.
 
-- **[Link to your Figma, Zeplin, or image file here]**
+- **https://www.figma.com/design/BVC54XVHvYOHkqKq8uJs1F/New-hires-Challenges**
+- **Password:** `Happly2025`
 
 ---
 
@@ -45,7 +46,7 @@ Run the following command to start the local development server:
 npm start
 ```
 
-Your browser will open to `http://localhost:3000`. You will see a "Start Page" asking for your email.
+Your browser will open to `http://localhost:5173`. You will see a "Start Page" asking for your email.
 
 **3. Authenticate Your Session**
 Enter your email and click "Start Session." This will communicate with our backend to create a unique, temporary session for you. The session token will be automatically saved in your browser's Local Storage and used for all subsequent API calls. Once authenticated, you will be taken to the application's home page.
@@ -70,7 +71,7 @@ Please implement the following features.
 
 - [ ] **Create Opportunities:**
 
-  - There should be a form page (e.g., at a `/form` route).
+  - There should be a form page (at the `/form` route).
   - The form must contain fields for `Title`, `Description`, and `Amount`.
   - All form fields are required.
   - Implement the following front-end validation:
@@ -82,7 +83,7 @@ Please implement the following features.
 
 - [ ] **List Opportunities:**
 
-  - There should be a page that displays all the opportunities you have created (e.g., at a `/list` route).
+  - There should be a page that displays all the opportunities you have created (at the `/list` route).
   - This page must include a search bar that filters the list of opportunities by `Title` as the user types. The filtering should happen via an API call.
 
 - [ ] **Delete Opportunities:**
@@ -108,7 +109,10 @@ The base URL is configured in your `.env` file.
 Here are the API endpoints that you will need to use in the app:
 
 - `GET /opportunities` - Get all opportunities
-- `POST /opportunities` - Create a new opportunity
+- `POST /opportunities` - Create a new opportunity. This endpoint expects the following JSON payload:
+  - `title`: string, maximum 100 characters
+  - `description`: string, maximum 500 characters
+  - `amount`: number, maximum value: 10M
 - `DELETE /opportunities/:id` - Delete an opportunity
 
 **Authentication:**  

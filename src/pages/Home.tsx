@@ -29,27 +29,165 @@ export default function Home() {
       <h1>The task</h1>
 
       <p>
-        The task is to implement a "program" listing app. The app should have a
-        form for adding new "programs", and a page to list the existing
-        "programs".
+        Your goal is to implement a simple single-page application (SPA) to
+        create, view, and manage business opportunities. The application will
+        have two main pages:
       </p>
 
-      <p>
-        The design for both pages can be accessed{' '}
-        <a
-          href='https://www.figma.com/design/BVC54XVHvYOHkqKq8uJs1F/New-hires-Challenges'
-          target='_blank'
-        >
-          on Figma
-        </a>
-        . Password: <span className='code'>Happly2025</span>
-      </p>
+      <ol>
+        <li>A form to create new opportunities.</li>
+        <li>A page to list, search, and delete existing opportunities.</li>
+      </ol>
+
+      <p>This starter project is a Vite + React + TypeScript application.</p>
+
+      <h2>Design Files</h2>
 
       <p>
-        Navigate to <a href='/form'>/form</a> or <a href='/list'>/list</a> to
-        view the requirements for respective pages. Use the space under the
-        requirements to implement the app.
+        A design mockup for this challenge can be found at the following link.
+        Please aim to create an implementation that closely matches the provided
+        designs for both desktop and mobile layouts.
       </p>
+
+      <ul>
+        <li>
+          <a
+            href='https://www.figma.com/design/BVC54XVHvYOHkqKq8uJs1F/New-hires-Challenges'
+            target='_blank'
+          >
+            https://www.figma.com/design/BVC54XVHvYOHkqKq8uJs1F/New-hires-Challenges
+          </a>
+        </li>
+
+        <li>
+          Password: <span className='code'>Happly2025</span>
+        </li>
+      </ul>
+
+      <h2>Constraints & Guidelines</h2>
+
+      <p>
+        Please adhere to the following constraints while completing the
+        challenge:
+      </p>
+
+      <ul>
+        <li>
+          <span className='code'>Technology</span>: This project must be
+          completed using <span className='code'>TypeScript</span>,{' '}
+          <span className='code'>functional components</span>, and{' '}
+          <span className='code'>React Hooks</span>. Please do not use class
+          components.
+        </li>
+        <li>
+          <span className='code'>Libraries</span>: You are free to use any
+          libraries you see fit.
+        </li>
+        <li>
+          <span className='code'>Styling</span>: You have complete freedom in
+          your styling approach. You can use plain CSS, CSS Modules, Tailwind
+          CSS, or any CSS-in-JS library you prefer.
+        </li>
+      </ul>
+
+      <h2>Requirements</h2>
+
+      <p>Please implement the following features.</p>
+
+      <h3>Functional Requirements</h3>
+
+      <h4>Create Opportunities</h4>
+
+      <ul>
+        <li>
+          There should be a form page (at the{' '}
+          <a href='/form'>
+            <span className='code'>/form</span>
+          </a>{' '}
+          route).
+        </li>
+        <li>
+          The form must contain fields for <span className='code'>Title</span>,{' '}
+          <span className='code'>Description</span>, and{' '}
+          <span className='code'>Amount</span>.
+        </li>
+        <li>All form fields are required.</li>
+        <li>
+          Implement the following front-end validation:
+          <ul>
+            <li>
+              <span className='code'>Title</span>: Maximum 100 characters.
+            </li>
+            <li>
+              <span className='code'>Description</span>: Maximum 500 characters.
+            </li>
+            <li>
+              <span className='code'>Amount</span>: Must be a number with a
+              maximum value of 10,000,000.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Display a helpful error message to the user if validation fails.
+        </li>
+        <li>
+          On successful submission, the form should clear, and the user should
+          be redirected to the opportunity list page.
+        </li>
+      </ul>
+
+      <h4>List Opportunities</h4>
+
+      <ul>
+        <li>
+          There should be a page that displays all the opportunities you have
+          created (at the{' '}
+          <a href='/list'>
+            <span className='code'>/list</span>
+          </a>{' '}
+          route).
+        </li>
+        <li>
+          This page must include a search bar that filters the list of
+          opportunities by <span className='code'>Title</span> as the user
+          types. The filtering should happen via an API call.
+        </li>
+      </ul>
+
+      <h4>Delete Opportunities</h4>
+
+      <ul>
+        <li>Each opportunity in the list should have a "Delete" button.</li>
+        <li>
+          Clicking "Delete" should remove the item from the backend and update
+          the list in the UI.
+        </li>
+      </ul>
+
+      <h3>UI/UX Requirements</h3>
+
+      <h4>Responsive Layout</h4>
+
+      <ul>
+        <li>
+          The listing page should have a responsive design that looks good on
+          both mobile and desktop screens, as shown in the design files.
+        </li>
+      </ul>
+
+      <h4>Text Truncation</h4>
+
+      <ul>
+        <li>
+          In the opportunity list, if a <span className='code'>Title</span> is
+          too long to fit in its container, it must be truncated with an
+          ellipsis (...).
+        </li>
+        <li>
+          If a <span className='code'>Description</span> is too long, it must be
+          truncated to a maximum of two lines with an ellipsis (...).
+        </li>
+      </ul>
 
       <h2>API Documentation</h2>
 
@@ -66,7 +204,20 @@ export default function Home() {
         </li>
         <li>
           <span className='code'>POST /opportunities</span> - Create a new
-          opportunity
+          opportunity. This endpoint expects the following JSON payload:
+          <ul>
+            <li>
+              <span className='code'>title</span>: string, maximum 100
+              characters
+            </li>
+            <li>
+              <span className='code'>description</span>: string, maximum 500
+              characters
+            </li>
+            <li>
+              <span className='code'>amount</span>: number, maximum value: 10M
+            </li>
+          </ul>
         </li>
         <li>
           <span className='code'>DELETE /opportunities/:id</span> - Delete an
@@ -78,21 +229,22 @@ export default function Home() {
 
       <ul>
         <li>
-          <b>Correctness:</b> Does the application meet all the functional
-          requirements and work as expected?
+          <span className='code'>Correctness:</span> Does the application meet
+          all the functional requirements and work as expected?
         </li>
         <li>
-          <b>Design Implementation:</b> How closely does your implementation
-          match the provided design files for responsiveness, layout, and visual
-          details?
+          <span className='code'>Design Implementation:</span> How closely does
+          your implementation match the provided design files for
+          responsiveness, layout, and visual details?
         </li>
         <li>
-          <b>Code Quality:</b> Is the code clean, well-organized, and easy to
-          read? Do you use modern React practices and TypeScript effectively?
+          <span className='code'>Code Quality:</span> Is the code clean,
+          well-organized, and easy to read? Do you use modern React practices
+          and TypeScript effectively?
         </li>
         <li>
-          <b>State Management:</b> How do you handle application state? Is it
-          logical and efficient?
+          <span className='code'>State Management:</span> How do you handle
+          application state? Is it logical and efficient?
         </li>
       </ul>
 
@@ -101,7 +253,8 @@ export default function Home() {
       <ol>
         <li>
           When you have completed the challenge, create a{' '}
-          <b>new private repository</b> on your personal GitHub account.
+          <span className='code'>new private repository</span> on your personal
+          GitHub account.
         </li>
         <li>
           Push all your code (including your git history) to this new private
@@ -123,8 +276,8 @@ export default function Home() {
           </ul>
         </li>
         <li>
-          Paste the URL of your <b>private</b> GitHub repository into the
-          submission form and click "Submit Final Work".
+          Paste the URL of your <span className='code'>private</span> GitHub
+          repository into the submission form and click "Submit Final Work".
         </li>
       </ol>
 
