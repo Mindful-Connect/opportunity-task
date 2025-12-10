@@ -21,15 +21,13 @@
 }
 
 a {
-  display: block;
-
   font-weight: 500;
-  color: #2251d8;
-  text-decoration: inherit;
+  color: #44a;
+  text-decoration: underline;
 }
 
 a:hover {
-  color: #284188;
+  color: #114;
   text-decoration: underline;
 }
 
@@ -38,14 +36,8 @@ body {
   place-items: start;
 }
 
-h1 {
-  font-size: 1.4em;
-  font-weight: 500;
-  line-height: 1.1;
-}
-
 p {
-  margin: 0;
+  margin: 0 0 8px 0;
 }
 
 hr {
@@ -54,18 +46,8 @@ hr {
   border-bottom: transparent;
 }
 
-.navbar {
-  display: flex;
-  height: min-content;
-  border-bottom: #eee solid 1px;
-  padding: 16px;
-  gap: 16px;
-}
-
-.navlinks {
-  display: flex;
-  gap: 16px;
-  margin-top: 6px;
+.page {
+  padding: 20px;
 }
 
 .content {

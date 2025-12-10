@@ -1,7 +1,20 @@
 export default function ToDoList() {
   return (
-    <>
+    <div className='page'>
+      <p>
+        <a href='/'>{'<'} Task</a>
+      </p>
+
+      <p>
+        <a href='/form'>Form</a>
+      </p>
+
       <h1>List</h1>
+
+      <p>
+        This page is for listing "programs". You can find the assets for it in
+        the <span className='code'>/public</span> directory of this project.
+      </p>
 
       <ul>
         <li>
@@ -19,6 +32,8 @@ export default function ToDoList() {
       </ul>
 
       <hr />
-    </>
+
+      {/* You can use this space to implement the list */}
+    </div>
   )
 }

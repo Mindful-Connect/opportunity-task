@@ -121,12 +121,12 @@ For example:
 
 ```ts
 fetch(`${API_URL}/example-endpoint`, {
-  method: "GET",
+  method: 'GET',
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`, // token from useSession()
   },
-});
+})
 ```
 
 ---
@@ -135,12 +135,12 @@ fetch(`${API_URL}/example-endpoint`, {
 
 1.  When you have completed the challenge, create a **new private repository** on your personal GitHub account.
 2.  Push all your code (including your git history) to this new private repository.
-3.  Invite the following GitHub user(s) as collaborators to your private repository so we can review your work. This is a critical step.
+3.  Invite the following GitHub users as collaborators to your private repository so we can review your work. This is a critical step.
     - `inflex13`
     - `yevgeniy-akimenko`
     - `Nuccino92`
-4.  Return to the application running on `localhost:3000`. There will be a section for you to submit your final work.
-5.  Paste the URL of your **private** GitHub repository into the submission form and click "Submit."
+4.  Return to the application running on `localhost:5173`. There will be a section for you to submit your final work.
+5.  Paste the URL of your **private** GitHub repository into the submission form and click "Submit Final Work".
 
 ---
 

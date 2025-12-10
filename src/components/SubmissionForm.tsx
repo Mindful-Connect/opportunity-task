@@ -1,56 +1,58 @@
-import React, { useState } from "react";
-import { useSession } from "../context/SessionContext";
+import React, { useState } from 'react'
+import { useSession } from '../context/SessionContext'
 
 const SubmissionForm = () => {
-  const [url, setUrl] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { submit } = useSession();
+  const [url, setUrl] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { submit } = useSession()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!url || !url.startsWith("https://github.com")) {
-      alert("Please enter a valid GitHub repository URL.");
-      return;
+    e.preventDefault()
+    if (!url || !url.startsWith('https://github.com')) {
+      alert('Please enter a valid GitHub repository URL.')
+      return
     }
-    if (isSubmitting) return;
+    if (isSubmitting) return
 
-    setIsSubmitting(true);
+    setIsSubmitting(true)
     try {
-      await submit(url);
+      await submit(url)
     } catch (error) {
       alert(
         `Submission failed: ${
           error instanceof Error ? error.message : String(error)
         }`
-      );
-      setIsSubmitting(false);
+      )
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
     <div
-      style={{ marginTop: "40px", padding: "20px", border: "1px solid #ccc" }}
+      style={{ marginTop: '20px', padding: '20px', border: '1px solid #ccc' }}
     >
       <h2>Final Submission</h2>
+
       <p>
         When you have completed the challenge and pushed your code to a private
         GitHub repository, please paste the URL below to submit your work.
       </p>
-      <form onSubmit={handleSubmit}>
+
+      <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
         <input
-          type="url"
+          type='url'
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          placeholder="https://github.com/your-username/your-repo-name"
+          placeholder='https://github.com/your-username/your-repo-name'
           required
-          style={{ width: "300px", marginRight: "10px" }}
+          style={{ width: '300px', marginRight: '10px' }}
         />
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Submitting..." : "Submit Final Work"}
+        <button type='submit' disabled={isSubmitting}>
+          {isSubmitting ? 'Submitting...' : 'Submit Final Work'}
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default SubmissionForm;
+export default SubmissionForm
