@@ -41,29 +41,6 @@ export default function Home() {
 
       <p>This starter project is a Vite + React + TypeScript application.</p>
 
-      <h2>Design Files</h2>
-
-      <p>
-        A design mockup for this challenge can be found at the following link.
-        Please aim to create an implementation that closely matches the provided
-        designs for both desktop and mobile layouts.
-      </p>
-
-      <ul>
-        <li>
-          <a
-            href='https://www.figma.com/design/BVC54XVHvYOHkqKq8uJs1F/New-hires-Challenges'
-            target='_blank'
-          >
-            https://www.figma.com/design/BVC54XVHvYOHkqKq8uJs1F/New-hires-Challenges
-          </a>
-        </li>
-
-        <li>
-          Password: <span className='code'>Happly2025</span>
-        </li>
-      </ul>
-
       <h2>Constraints & Guidelines</h2>
 
       <p>

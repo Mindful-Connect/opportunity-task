@@ -19,15 +19,6 @@ This starter project is a Vite + React + TypeScript application.
 
 ---
 
-## Design Files
-
-A design mockup for this challenge can be found at the following link. Please aim to create an implementation that closely matches the provided designs for both desktop and mobile layouts.
-
-- **https://www.figma.com/design/BVC54XVHvYOHkqKq8uJs1F/New-hires-Challenges**
-- **Password:** `Happly2025`
-
----
-
 ## Getting Started
 
 Follow these steps to get the project running and connected to the API.
